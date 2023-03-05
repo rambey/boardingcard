@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+
+            
+    boardingcard:
+        build: php
+        container_name: www_docker_boardingcard
+        ports:
+          - "8661:80"
+        volumes:
+            - ./php/vhosts:/etc/apache2/sites-enabled
+            - ./:/var/www
+        restart: always
+        extra_hosts:
+            - host.docker.internal:host-gateway
+        networks:
+            - dev
+            
+            
+            
+                         
+networks:
+    dev:
+
+volumes:
+    db-data:
