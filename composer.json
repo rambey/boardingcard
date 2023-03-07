@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Model\\": "Model/"
+        }
+    },
     "require-dev": {
         "phpstan/phpstan": "^1.10"
     }

@@ -6,7 +6,7 @@ services:
         build: php
         container_name: www_docker_boardingcard
         ports:
-          - "8661:80"
+          - "8660:80"
         volumes:
             - ./php/vhosts:/etc/apache2/sites-enabled
             - ./:/var/www

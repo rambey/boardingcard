@@ -11,7 +11,8 @@ class BoardingCard
     private ?string $gate;
     private ?string $baggageDrop;
 
-    public function __construct(string $origin, string $destination, string $transportation, ?string $seatAssignment = null, ?string $gate = null, ?string $baggageDrop = null) {
+    public function __construct(string $origin, string $destination, string $transportation, ?string $seatAssignment = null, ?string $gate = null, ?string $baggageDrop = null)
+    {
         $this->origin = $origin;
         $this->destination = $destination;
         $this->transportation = $transportation;
@@ -20,51 +21,63 @@ class BoardingCard
         $this->baggageDrop = $baggageDrop;
     }
 
-    public function getOrigin(): string {
+    public function getOrigin(): string
+    {
         return $this->origin;
     }
 
-    public function setOrigin(string $origin): void {
+    public function setOrigin(string $origin): void
+    {
         $this->origin = $origin;
     }
 
-    public function getDestination(): string {
+    public function getDestination(): string
+    {
         return $this->destination;
     }
 
-    public function setDestination(string $destination): void {
+    public function setDestination(string $destination): void
+    {
         $this->destination = $destination;
     }
 
-    public function getTransportation(): string {
+    public function getTransportation(): string
+    {
         return $this->transportation;
     }
 
-    public function setTransportation(string $transportation): void {
+    public function setTransportation(string $transportation): void
+    {
         $this->transportation = $transportation;
     }
 
-    public function getSeatAssignment(): ?string {
+    public function getSeatAssignment(): ?string
+    {
         return $this->seatAssignment;
     }
 
-    public function setSeatAssignment(?string $seatAssignment): void {
+    public function setSeatAssignment(?string $seatAssignment): void
+    {
         $this->seatAssignment = $seatAssignment;
     }
 
-    public function getGate(): ?string {
+    public function getGate(): ?string
+    {
         return $this->gate;
     }
 
-    public function setGate(?string $gate): void {
+    public function setGate(?string $gate): void
+    {
         $this->gate = $gate;
     }
 
-    public function getBaggageDrop(): ?string {
+    public function getBaggageDrop(): ?string
+    {
         return $this->baggageDrop;
     }
 
-    public function setBaggageDrop(?string $baggageDrop): void {
+    public function setBaggageDrop(?string $baggageDrop): void
+    {
         $this->baggageDrop = $baggageDrop;
     }
 }
