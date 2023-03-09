@@ -8,11 +8,13 @@ class BoardingCardController
 {
     /**
      * sort array of BoardingCard
+     * @param BoardingCard[] $boardingCards
      * @return BoardingCard[]
      */
-    public function sortBoardingCards($boardingCards): array
+    public function sortBoardingCards(array $boardingCards): array
     {
-        $sortedCards = array();
+        $sortedCards = [];
+        $startingCard = null;
         // find starting point
         foreach ($boardingCards as $card) {
             $found = false;
@@ -28,14 +30,21 @@ class BoardingCardController
             }
         }
         // add starting card to sorted array
-        array_push($sortedCards, $startingCard);
+        if ($startingCard !== null) {
+            array_push($sortedCards, $startingCard);
+        }
 
         // find next card for each card and add to sorted array
         while (count($sortedCards) < count($boardingCards)) {
             foreach ($boardingCards as $card) {
-                if ($card->getStartPoint() == end($sortedCards)->getDestination()) {
+                $end = end($sortedCards);
+                if ($end !== false && $card->getStartPoint() == $end->getDestination()) {
                     array_push($sortedCards, $card);
                 }
+            }
+            // exit early if all cards are sorted
+            if (count($sortedCards) == count($boardingCards)) {
+                break;
             }
         }
         return $sortedCards;
@@ -43,10 +52,10 @@ class BoardingCardController
 
     /**
      * display sorted Cards
-     * @param $sortedCards
+     * @param BoardingCard[] $sortedCards
      * @return void
      */
-    function displayBoardingCards($sortedCards):void {
+    function displayBoardingCards(array $sortedCards):void {
         $i = 1;
         foreach ($sortedCards as $card) {
             echo "$i. Take " . $card->getTransportation() . " from " . $card->getStartPoint() . " to " . $card->getDestination() . ".";

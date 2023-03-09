@@ -26,7 +26,7 @@ class BoardingCardSorterTest extends TestCase
         ];
         $this->assertEquals($expectedResult, $boardingCardController->sortBoardingCards($boardingCards));
     }
-    
+
     // Test case with 2 boarding cards in reverse order
     public function testSortBoardingCardsReverseOrder(): void
     {
@@ -39,7 +39,7 @@ class BoardingCardSorterTest extends TestCase
             $boardingCards[0]
         ];
         $boardingCardController = new BoardingCardController();
-        echo $this->assertEquals($expectedResult, $boardingCardController->sortBoardingCards($boardingCards));
+        $this->assertEquals($expectedResult, $boardingCardController->sortBoardingCards($boardingCards));
     }
 
     // Test case with 1 boarding card
@@ -52,6 +52,6 @@ class BoardingCardSorterTest extends TestCase
             $boardingCards[0]
         ];
         $boardingCardController = new BoardingCardController();
-        echo $this->assertEquals($expectedResult, $boardingCardController->sortBoardingCards($boardingCards));
+        $this->assertEquals($expectedResult, $boardingCardController->sortBoardingCards($boardingCards));
     }
 }
