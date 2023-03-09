@@ -4,16 +4,16 @@ namespace Model;
 
 class BoardingCard
 {
-    private string $origin;
+    private string $startPoint;
     private string $destination;
-    private string $transportation;
+    private ?string $transportation;
     private ?string $seatAssignment;
     private ?string $gate;
     private ?string $baggageDrop;
 
-    public function __construct(string $origin, string $destination, string $transportation, ?string $seatAssignment = null, ?string $gate = null, ?string $baggageDrop = null)
+    public function __construct(string $startPoint, string $destination, ?string $transportation, ?string $seatAssignment = null, ?string $gate = null, ?string $baggageDrop = null)
     {
-        $this->origin = $origin;
+        $this->startPoint = $startPoint;
         $this->destination = $destination;
         $this->transportation = $transportation;
         $this->seatAssignment = $seatAssignment;
@@ -21,61 +21,97 @@ class BoardingCard
         $this->baggageDrop = $baggageDrop;
     }
 
-    public function getOrigin(): string
+    /**
+     * @return string
+     */
+    public function getStartPoint(): string
     {
-        return $this->origin;
+        return $this->startPoint;
     }
 
-    public function setOrigin(string $origin): void
+    /**
+     * @param string $startPoint
+     */
+    public function setStartPoint(string $startPoint): void
     {
-        $this->origin = $origin;
+        $this->startPoint = $startPoint;
     }
 
+    /**
+     * @return string
+     */
     public function getDestination(): string
     {
         return $this->destination;
     }
 
+    /**
+     * @param string $destination
+     */
     public function setDestination(string $destination): void
     {
         $this->destination = $destination;
     }
 
-    public function getTransportation(): string
+    /**
+     * @return string|null
+     */
+    public function getTransportation(): ?string
     {
         return $this->transportation;
     }
 
-    public function setTransportation(string $transportation): void
+    /**
+     * @param string|null $transportation
+     */
+    public function setTransportation(?string $transportation): void
     {
         $this->transportation = $transportation;
     }
 
+    /**
+     * @return string|null
+     */
     public function getSeatAssignment(): ?string
     {
         return $this->seatAssignment;
     }
 
+    /**
+     * @param string|null $seatAssignment
+     */
     public function setSeatAssignment(?string $seatAssignment): void
     {
         $this->seatAssignment = $seatAssignment;
     }
 
+    /**
+     * @return string|null
+     */
     public function getGate(): ?string
     {
         return $this->gate;
     }
 
+    /**
+     * @param string|null $gate
+     */
     public function setGate(?string $gate): void
     {
         $this->gate = $gate;
     }
 
+    /**
+     * @return string|null
+     */
     public function getBaggageDrop(): ?string
     {
         return $this->baggageDrop;
     }
 
+    /**
+     * @param string|null $baggageDrop
+     */
     public function setBaggageDrop(?string $baggageDrop): void
     {
         $this->baggageDrop = $baggageDrop;
